@@ -15,18 +15,22 @@ function Flag() {
   if (name.length < 3) {
     defError("name-error-container", "*The Length of Name is too short");
     returnval = false;
+    return;
   }
   else if (name.length > 50) {
     defError("name-error-container", "*The Length of Name is too long");
     returnval = false;
+    return;
   }
   else if (!usernameRegex.test(name)) {
     defError("name-error-container", "*Please use only Alphabets");
     returnval = false;
+    return;
   }
   else if (name.length == 0) {
     defError("name-error-container", "*Please Fill Your Name");
     returnval = false;
+    return;
   } else {
     defError("name-error-container", "");
   }
@@ -39,14 +43,17 @@ function Flag() {
   if (email.length < 5) {
     defError("email-error-container", "*The Length of email is too short");
     returnval = false;
+    return;
   }
   else if (email.length > 50) {
     defError("email-error-container", "*The Length of email is too long");
     returnval = false;
+    return;
   }
   else if (!emailRegex.test(email)) {
     defError("email-error-container", "*Please enter a valid BITS email only");
     returnval = false;
+    return;
   } else {
     defError("email-error-container", "");
   }
@@ -58,10 +65,12 @@ function Flag() {
   if (phone.length < 10) {
     defError("phone-error-container", "*Please enter a valid mobile number");
     returnval = false;
+    return;
   }
   else if (!phoneRegex.test(phone)) {
     defError("phone-error-container", "*Please enter a valid mobile number");
     returnval = false;
+    return;
   } else {
     defError("phone-error-container", "");
   }
@@ -77,8 +86,38 @@ function Flag() {
   if (!bitsidRegex.test(bitsid) && !bitsidRegex2.test(bitsid)) {
     defError("id-error-container", "*Please enter a valid BITS ID");
     returnval = false;
+    return;
   } else {
     defError("id-error-container", "");
+  }
+
+  
+  var hostelInput = document.querySelector('select[name="hostel-name"]').value;
+  if(!hostelInput){
+    defError("hostel-error-container", "*Please Choose your Hostel!")
+    returnval=false;
+    return;
+  }else{
+    defError("hostel-error-container", "");
+  }
+
+  var radioInput = document.querySelector('input[name="r"]:checked');
+  if(!radioInput){
+    defError("radio-error-container", "(*Choose one of the Sizes!)");
+    returnval = false;
+    return;
+  }else{
+    defError("radio-error-container", "");
+  }
+
+  var checkboxInput = document.querySelector('input[name="checkbox-input"]:checked');
+  if(!checkboxInput){
+    defError("checkbox-error-container", "*Please check this!");
+    returnval=false;
+    return;
+
+  }else{
+    defError("checkbox-error-container", "");
   }
 
   if (!uniqueSubmission()) {
@@ -90,30 +129,6 @@ function Flag() {
   } else{
     defError("uniquesubmission-error-container", "");
 
-  }
-  var hostelInput = document.querySelector('select[name="hostel-name"]').value;
-  if(!hostelInput){
-    defError("hostel-error-container", "*Please Choose your Hostel!")
-    returnval=false;
-  }else{
-    defError("hostel-error-container", "");
-  }
-
-  var radioInput = document.querySelector('input[name="r"]:checked');
-  if(!radioInput){
-    defError("radio-error-container", "(*Choose one of the Sizes!)");
-    returnval = false;
-  }else{
-    defError("radio-error-container", "");
-  }
-
-  var checkboxInput = document.querySelector('input[name="checkbox-input"]:checked');
-  if(!checkboxInput){
-    defError("checkbox-error-container", "*Please check this!");
-    returnval=false;
-
-  }else{
-    defError("checkbox-error-container", "");
   }
 
   return returnval;
@@ -211,4 +226,4 @@ function fillData() {
   
 }
 document.querySelector("form").addEventListener("submit", storeData);
-window.onload = fillData;
+document.querySelector("form").addEventListener("DOMContentLoaded", fillData);
