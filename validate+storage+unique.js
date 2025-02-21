@@ -81,7 +81,7 @@ function Flag() {
   var bitsidRegex =
     /^(19[6-9][0-9]|20[0-1][0-9]|202[0-3])(B1|B2|B3|B4|B5|D2){0,1}(A1|A2|A3|A4|A5|A7|A8|AA|AB|AD){1}(PS|TS)([0-4][0-9][0-9][1-9])(P|G|H)$/;
   var bitsidRegex2 =
-    /^(2024)(A1|A2|A3|A4|A5|A7|A8|AA|AB|AD|B1|B2|B3|B4|B5|D2)(PS|TS)([0-4][0-9][0-9][1-9])(P|G|H)$/;
+    /^(2024)(A1|A2|A3|A4|A5|A7|A8|AA|AB|AD|B1|B2|B3|B4|B5|D2)(PS|TS)([0-4][0-9][0-9][0-9])(P|G|H)$/;
 
   if (!bitsidRegex.test(bitsid) && !bitsidRegex2.test(bitsid)) {
     defError("id-error-container", "*Please enter a valid BITS ID");
