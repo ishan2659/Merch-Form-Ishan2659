@@ -318,5 +318,10 @@ input.check-input{
   padding-left: 58%;
   width: 50%;
 }
+.form-submission-confirmation{
+  width: 100%;
+  height: 100%;
+  color: green;
+}
 }
 
