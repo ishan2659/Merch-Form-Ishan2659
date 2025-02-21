@@ -339,5 +339,10 @@
     width: 50%;
     padding-top: 20px;
   }
+  .form-submission-confirmation{
+    width: 100%;
+    height: 100%;
+    color: green;
+  }
   
 }
