@@ -62,16 +62,17 @@ function Flag() {
   var phone = phoneElement.value;
   var phoneRegex = /^([6-9])([0-9])*$/;
 
-  if (phone.length < 10) {
+  
+  if (!phoneRegex.test(phone)) {
     defError("phone-error-container", "*Please enter a valid mobile number");
     returnval = false;
     return;
-  }
-  else if (!phoneRegex.test(phone)) {
+  }else if (phone.length > 10) {
     defError("phone-error-container", "*Please enter a valid mobile number");
     returnval = false;
     return;
-  } else {
+  } 
+  else {
     defError("phone-error-container", "");
   }
 
@@ -147,7 +148,8 @@ function uniqueSubmission() {
 }
 
 //////////////////////////////////////////////////////////
-function storeData() {
+function storeData(event) {
+  event.preventDefault();
   if (!Flag()) {
     return;
   }
@@ -227,3 +229,5 @@ function fillData() {
 }
 document.querySelector("form").addEventListener("submit", storeData);
 document.addEventListener("DOMContentLoaded", fillData());
+  
+
