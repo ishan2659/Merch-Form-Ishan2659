@@ -16,18 +16,15 @@ function Flag() {
     defError("name-error-container", "*The Length of Name is too short");
     returnval = false;
     return;
-  }
-  else if (name.length > 50) {
+  } else if (name.length > 50) {
     defError("name-error-container", "*The Length of Name is too long");
     returnval = false;
     return;
-  }
-  else if (!usernameRegex.test(name)) {
+  } else if (!usernameRegex.test(name)) {
     defError("name-error-container", "*Please use only Alphabets");
     returnval = false;
     return;
-  }
-  else if (name.length == 0) {
+  } else if (name.length == 0) {
     defError("name-error-container", "*Please Fill Your Name");
     returnval = false;
     return;
@@ -44,13 +41,11 @@ function Flag() {
     defError("email-error-container", "*The Length of email is too short");
     returnval = false;
     return;
-  }
-  else if (email.length > 50) {
+  } else if (email.length > 50) {
     defError("email-error-container", "*The Length of email is too long");
     returnval = false;
     return;
-  }
-  else if (!emailRegex.test(email)) {
+  } else if (!emailRegex.test(email)) {
     defError("email-error-container", "*Please enter a valid BITS email only");
     returnval = false;
     return;
@@ -62,17 +57,15 @@ function Flag() {
   var phone = phoneElement.value;
   var phoneRegex = /^([6-9])([0-9])*$/;
 
-  
   if (!phoneRegex.test(phone)) {
     defError("phone-error-container", "*Please enter a valid mobile number");
     returnval = false;
     return;
-  }else if (phone.length > 10) {
+  } else if (phone.length > 10) {
     defError("phone-error-container", "*Please enter a valid mobile number");
     returnval = false;
     return;
-  } 
-  else {
+  } else {
     defError("phone-error-container", "");
   }
 
@@ -92,36 +85,34 @@ function Flag() {
     defError("id-error-container", "");
   }
 
-  
   var hostelInput = document.querySelector('select[name="hostel-name"]').value;
-  if(!hostelInput){
-    defError("hostel-error-container", "*Please Choose your Hostel!")
-    returnval=false;
+  if (!hostelInput) {
+    defError("hostel-error-container", "*Please Choose your Hostel!");
+    returnval = false;
     return;
-  }else{
+  } else {
     defError("hostel-error-container", "");
   }
 
   var radioInput = document.querySelector('input[name="r"]:checked');
-  if(!radioInput){
+  if (!radioInput) {
     defError("radio-error-container", "(*Choose one of the Sizes!)");
     returnval = false;
     return;
-  }else{
+  } else {
     defError("radio-error-container", "");
   }
 
-  var checkboxInput = document.querySelector('input[name="checkbox-input"]:checked');
-  if(!checkboxInput){
+  var checkboxInput = document.querySelector(
+    'input[name="checkbox-input"]:checked'
+  );
+  if (!checkboxInput) {
     defError("checkbox-error-container", "*Please check this!");
-    returnval=false;
+    returnval = false;
     return;
-
-  }else{
+  } else {
     defError("checkbox-error-container", "");
   }
-
- 
 
   return returnval;
 }
@@ -129,18 +120,23 @@ function Flag() {
 function uniqueSubmission() {
   var flag = true;
   var newid = document.getElementById("id-input").value;
-  
-    var storedBitsId = localStorage.getItem("Bits-ID");
-    if (newid === storedBitsId) {
-      flag = false;
-    }
-  
+
+  var storedBitsId = localStorage.getItem("Bits-ID");
+  if (newid === storedBitsId) {
+    flag = false;
+  }
+
+
   return flag;
 }
 
 //////////////////////////////////////////////////////////
+function submissionConfirmation() {
+  defError("form-submission-confirmation", "The form is submitted!");
+}
 function storeData(event) {
   event.preventDefault();
+  defError("form-submission-confirmation", "");
   if (!Flag()) {
     return;
   }
@@ -149,10 +145,10 @@ function storeData(event) {
       "uniquesubmission-error-container",
       "*We only accept unique Submission"
     );
-    return;
-  } else{
-    defError("uniquesubmission-error-container", "");
 
+    return;
+  } else {
+    defError("uniquesubmission-error-container", "");
   }
 
   var nameElement = document.getElementById("name-input");
@@ -164,25 +160,41 @@ function storeData(event) {
   var email = emailElement.value;
   var bitsidElement = document.getElementById("id-input");
   var bitsid = bitsidElement.value;
- 
+
   var hostelElement = document.querySelector('select[name="hostel-name"]');
   var hostel = hostelElement.options[hostelElement.selectedIndex].text;
 
   var size = document.querySelector('input[name="r"]:checked');
 
- 
   if (size) {
     size = size.value;
   } else {
-    size = ''; 
+    size = "";
   }
-  console.log(Name, email, phone, bitsid, hostel, size);
+
   localStorage.setItem("Name", Name);
   localStorage.setItem("Email", email);
   localStorage.setItem("Phone-no.", phone);
   localStorage.setItem("Bits-ID", bitsid);
   localStorage.setItem("Hostel", hostel);
   localStorage.setItem("Size", size);
+  submissionConfirmation();
+}
+
+function clearDatauponSubmission() {
+  document.getElementById("name-input").value = "";
+  document.getElementById("email-input").value = "";
+  document.getElementById("phone-input").value = "";
+  document.getElementById("id-input").value = "";
+  document.querySelector('select[name="hostel-name"]').value = "";
+  var radioButtons = document.querySelectorAll('input[name="r"]');
+  radioButtons.forEach(function (radioButton) {
+    radioButton.checked = false;
+  });
+  var checkbox = document.querySelector('input[name="checkbox-input"]');
+  if (checkbox) {
+    checkbox.checked = false;
+  }
 }
 
 function fillData() {
@@ -213,7 +225,7 @@ function fillData() {
   if (localStorage.getItem("Bits-ID")) {
     var idFill = document.getElementById("id-input");
     idFill.value = localStorage.getItem("Bits-ID");
-  }else{
+  } else {
     var idFill = document.getElementById("id-input");
     idFill.value = "";
   }
@@ -222,13 +234,16 @@ function fillData() {
     var hostelSelect = document.querySelector('select[name="hostel-name"]');
     if (hostelSelect) {
       hostelSelect.value = localStorage.getItem("Hostel");
-    }else{
+    } else {
       hostelSelect = "";
     }
   }
-  
 }
-document.querySelector("form").addEventListener("submit", storeData);
-document.addEventListener("DOMContentLoaded", fillData());
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  storeData(event);
   
+  clearDatauponSubmission();
+});
 
+document.addEventListener("DOMContentLoaded", fillData());
