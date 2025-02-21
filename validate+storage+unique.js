@@ -226,4 +226,4 @@ function fillData() {
   
 }
 document.querySelector("form").addEventListener("submit", storeData);
-document.querySelector("form").addEventListener("DOMContentLoaded", fillData);
+document.addEventListener("DOMContentLoaded", fillData());
