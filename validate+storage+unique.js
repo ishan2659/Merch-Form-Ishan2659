@@ -38,7 +38,7 @@ function Flag() {
   var emailElement = document.getElementById("email-input");
   var email = emailElement.value;
   var emailRegex =
-    /^(f|h|p)(19[6-9][0-9]|20[0-1][0-9]|202[0-4])([0-4][0-9][0-9][1-9])@(pilani|goa|hyderabad)(\.bits-pilani\.ac\.in)$/;
+    /^(f|h|p)(19[6-9][0-9]|20[0-1][0-9]|202[0-4])([0-4][0-9][0-9][0-9])@(pilani|goa|hyderabad)(\.bits-pilani\.ac\.in)$/;
 
   if (email.length < 5) {
     defError("email-error-container", "*The Length of email is too short");
@@ -121,16 +121,7 @@ function Flag() {
     defError("checkbox-error-container", "");
   }
 
-  if (!uniqueSubmission()) {
-    defError(
-      "uniquesubmission-error-container",
-      "*We only accept unique Submission"
-    );
-    returnval = false;
-  } else{
-    defError("uniquesubmission-error-container", "");
-
-  }
+ 
 
   return returnval;
 }
@@ -152,6 +143,16 @@ function storeData(event) {
   event.preventDefault();
   if (!Flag()) {
     return;
+  }
+  if (!uniqueSubmission()) {
+    defError(
+      "uniquesubmission-error-container",
+      "*We only accept unique Submission"
+    );
+    return;
+  } else{
+    defError("uniquesubmission-error-container", "");
+
   }
 
   var nameElement = document.getElementById("name-input");
