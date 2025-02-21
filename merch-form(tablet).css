@@ -1,0 +1,326 @@
+@media only screen and (max-width: 1125px) and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    background-image: url(pexels-codioful-7130475.jpg);
+    background-size: cover;
+    backdrop-filter: blur(16px);
+
+    margin: 0px;
+  }
+  h1,
+  span,
+  p {
+    caret-color: transparent;
+  }
+
+  .header-container {
+    background-color: transparent;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .header-text {
+    font-family: "Oswald", serif;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+  }
+  .header-text h1 {
+    font-weight: 700;
+    font-size: 4em;
+    margin-block-start: 0em;
+    margin-block-end: 0.2em;
+    margin: none;
+    text-align: center;
+  }
+  .header-text p {
+    margin: none;
+    width: 90%;
+    margin-left: 20px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-align: center;
+  }
+  .form-container {
+    background-color: transparent;
+    height: 1400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .form-section {
+    background-color: transparent;
+    background-image: url(pexels-codioful-7130475.jpg);
+    background-size: cover;
+    height: 80%;
+    width: 60%;
+    margin-top: 50px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 10px black;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-section-child {
+    width: 100%;
+    height: 25%;
+    display: flex;
+
+    flex-direction: column;
+  }
+  #tandc{
+    order: 3;
+  }
+  #radio-btn-2.form-section-child{
+    order: 4;
+    height: 7%;
+
+  }
+
+  #section-header h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    font-family: "Oswald", serif;
+    margin-block-end: 0px;
+  }
+  #section-header.form-section-child{
+    height: 12%;
+  }
+  .fsic-container {
+    padding-left: 13.6%;
+    width: calc(100% - 13.6%);
+    height: 40px;
+    padding-top: 20px;
+    display: flex;
+  }
+  #empty-fsic {
+    caret-color: transparent;
+  }
+  .icon {
+    height: 60px;
+    width: 10%;
+
+    display: flex;
+    justify-content: center;
+  }
+  .icon-span {
+    height: 20px;
+    width: 20px;
+    padding-top: 10px;
+    padding-left: 5px;
+  }
+  .fsic-container input {
+    height: 30px;
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom-width: 3px;
+    border-radius: 2px;
+    border-bottom-color: white;
+    outline: none;
+    color: white;
+    font-family: "Oswald", serif;
+    font-size: small;
+    width: 63.5%;
+  }
+  #checkbox-fsic.fsic-container{
+    margin-left: 20px;
+  }
+
+  .fsic-container input::placeholder {
+    color: white;
+    font-family: "Oswald", serif;
+
+    font-size: 14px;
+  }
+  .fsic-container select {
+    width: 63.5%;
+
+    font-family: "Oswald", serif;
+
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom-width: 3px;
+    border-radius: 2px;
+    border-bottom-color: white;
+    outline: none;
+
+    height: 34.4px;
+  }
+  .fsic-container option {
+    color: black;
+  }
+  form {
+    height: 100%;
+    width: 100%;
+  }
+  .big-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .big-container-1 {
+    width: 100%;
+    color: white;
+    font-family: "Oswald", serif;
+
+    font-size: 14px;
+
+    height: 50%;
+  }
+  .big-container-2 {
+    width: 100%;
+    color: white;
+    font-family: "Oswald", serif;
+
+    font-size: 14px;
+
+    height: 50%;
+  }
+  .errorform-container {
+    width: 100%;
+    height: 30px;
+    padding-left: 20%;
+    color: red;
+  }
+  .errorform-radio-container {
+    width: 50%;
+    height: 20px;
+    color: red;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .errorform-container p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
+  .errorform-radio-container p {
+    margin-block-start: 0px;
+    font-family: "Oswald", serif;
+
+    font-size: 12px;
+  }
+  #btn-submit.form-section-child {
+    display: flex;
+    order: 8;
+    display: none;
+
+    justify-content: center;
+  }
+  #btn-reset.form-section-child {
+    display: flex;
+    justify-content: center;
+  }
+  button.submit-btn {
+    height: 60px;
+    margin-top: 0px;
+    width: 55%;
+    display: flex;
+    margin-left: 25%;
+    justify-content: center;
+    align-items: center;
+    background-color: #211032;
+    border-radius: 40px;
+    box-shadow: 3px 3px 3px black;
+    border: none;
+    cursor: pointer;
+  }
+  button.submit-btn span {
+    color: white;
+
+    font-family: "Oswald", serif;
+    font-size: 16px;
+  }
+
+  button.submit:hover {
+    background-color: rgb(156, 34, 56);
+    box-shadow: none;
+  }
+
+  button.reset-btn {
+    height: 60px;
+    margin-top: 0px;
+    width: 55%;
+    display: flex;
+    margin-left: 25%;
+    justify-content: center;
+    align-items: center;
+    background-color: #211032;
+    border-radius: 40px;
+    box-shadow: 3px 3px 3px black;
+    border: none;
+    cursor: pointer;
+  }
+
+  button.reset-btn span {
+    color: white;
+
+    font-family: "Oswald", serif;
+    font-size: 16px;
+  }
+  button.reset-btn:hover {
+    background-color: rgb(156, 34, 56);
+    box-shadow: none;
+  }
+  .choose-text {
+    height: 20px;
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom-width: 3px;
+    border-radius: 2px;
+    border-bottom-color: white;
+
+    color: white;
+    font-family: "Oswald", serif;
+    font-size: 16px;
+    width: 250px;
+    padding-top: 10px;
+    display: flex;
+    padding-left: 5px;
+  }
+  .radio-btn-container {
+    width: 100%;
+    height: 30px;
+    padding-left: 150px;
+  }
+  .radio-btn-container input {
+    height: 15px;
+    width: 15px;
+    margin-top: 10px;
+    margin-left: 3px;
+  }
+  input.check-input {
+    height: 20px;
+    width: 20px;
+
+    display: flex;
+    justify-content: center;
+  }
+  .check-text {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    width: 75%;
+    padding-left: 7px;
+  }
+  #empty-fsic.fsic-container{
+    display: none;
+  }
+  .btn-container-tablet{
+    display: flex;
+    justify-content: space-around;
+  }
+}

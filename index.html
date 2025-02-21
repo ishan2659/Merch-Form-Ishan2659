@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="merch-form.css" />
+    <link rel="stylesheet" href="merch-form(tablet).css" />
+    <link rel="stylesheet" href="merch-form(mobile).css" />
+    <link rel="stylesheet" href="merch-form(mobileS).css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+    </style>
+    <script
+      src="https://kit.fontawesome.com/cd9d5d72c0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header-container">
+      <div class="header-text">
+        <h1>DVM Merch Signings</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          aspernatur. Laboriosam animi sint laborum ex quisquam facere ipsam
+          nulla illo quis tempore nostrum neque veniam a iusto, culpa sunt est.
+        </p>
+      </div>
+    </div>
+    <div class="form-container">
+      <div class="form-section">
+        <div class="form-section-child" id="section-header">
+          <h1>Registration Form</h1>
+        </div>
+        <form
+          action="#"
+          onsubmit="return Flag()&& storeData()"
+          name="registform"
+        >
+          <div class="big-container">
+            <div class="big-container-1">
+              <div class="form-section-child">
+                <div class="fsic-container">
+                  <div class="icon">
+                    <span class="icon-span"
+                      ><i
+                        class="fa-solid fa-user fa-lg"
+                        style="color: #ffffff"
+                      ></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Your Full Name"
+                    id="name-input"
+                  />
+                </div>
+                <div class="errorform-container" id="name-error-container">
+                  <p class="inputerror"></p>
+                </div>
+              </div>
+              <div class="form-section-child">
+                <div class="fsic-container">
+                  <div class="icon">
+                    <span class="icon-span"
+                      ><i
+                        class="fa-solid fa-envelope fa-lg"
+                        style="color: #ffffff"
+                      ></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Enter Your Email Address"
+                    id="email-input"
+                  />
+                </div>
+                <div class="errorform-container" id="email-error-container">
+                  <p class="inputerror"></p>
+                </div>
+              </div>
+              <div class="form-section-child">
+                <div class="fsic-container">
+                  <div class="icon">
+                    <span class="icon-span"
+                      ><i
+                        class="fa-solid fa-phone fa-lg"
+                        style="color: #ffffff"
+                      ></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Enter your Phone Number"
+                    id="phone-input"
+                  />
+                </div>
+                <div class="errorform-container" id="phone-error-container">
+                  <p class="inputerror"></p>
+                </div>
+              </div>
+              <div class="form-section-child">
+                <div class="fsic-container">
+                  <div class="icon">
+                    <span class="icon-span"
+                      ><i
+                        class="fa-solid fa-id-card fa-lg"
+                        style="color: #ffffff"
+                      ></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Enter Your BITS-ID"
+                    id="id-input"
+                  />
+                </div>
+                <div class="errorform-container" id="id-error-container">
+                  <p class="inputerror"></p>
+                </div>
+              </div>
+              <div class="form-section-child" id="btn-submit">
+                <button class="submit-btn" type="submit">
+                  <span>SUBMIT</span>
+                </button>
+              </div>
+            </div>
+            <div class="big-container-2">
+              <div class="form-section-child" id="dropdown">
+                <div class="fsic-container">
+                  <div class="icon">
+                    <span class="icon-span"
+                      ><i
+                        class="fa-solid fa-building fa-lg"
+                        style="color: #ffffff"
+                      ></i
+                    ></span>
+                  </div>
+                  <select
+                    aria-placeholder="Choose Your Hostel"
+                    class="dropdown-input"
+                   name="hostel-name">
+                    <option value="" disabled selected>
+                      Choose Your Hostel
+                    </option>
+                    <option value="Srinivasa Ramanujan Bhavan" name="hostel-name">
+                      Srinivasa Ramanujan Bhavan
+                    </option>
+                    <option value="Krishna Bhawan" name="hostel-name">
+                      Krishna Bhawan
+                    </option>
+                    <option value="Ram Bhawan" name="hostel-name">
+                      Ram Bhawan
+                    </option>
+                    <option value="Buddh Bhawan" name="hostel-name">
+                      Buddh Bhawan
+                    </option>
+                    <option value="Meera Bhawan" name="hostel-name">
+                      Meera Bhawan
+                    </option>
+                  </select>
+                </div>
+                <div class="errorform-container" id="hostel-error-container">
+                  <p class="inputerror"></p>
+                </div>
+              </div>
+              <div class="form-section-child" id="radio-btn">
+                <div class="fsic-container">
+                  <div class="icon">
+                    <span class="icon-span"
+                      ><i
+                        class="fa-solid fa-shirt fa-lg"
+                        style="color: #ffffff"
+                      ></i
+                    ></span>
+                  </div>
+                  <div class="choose-text">
+                    <span>Choose Your Size:-</span>
+                    <div
+                      class="errorform-radio-container"
+                      id="radio-error-container"
+                    >
+                      <p class="inputerror"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="radio-btn-container">
+                  <input
+                    type="radio"
+                    name="r"
+                    id="radio-input-1"
+                    style="cursor: pointer"
+                    value="S"
+                  />S
+                  <input
+                    type="radio"
+                    name="r"
+                    id="radio-input-2"
+                    style="cursor: pointer"
+                    value="M"
+                  />M
+                  <input
+                    type="radio"
+                    name="r"
+                    id="radio-input-3"
+                    style="cursor: pointer"
+                    value="L"
+                  />L
+                  <input
+                    type="radio"
+                    name="r"
+                    id="radio-input-4"
+                    style="cursor: pointer"
+                    value="XL"
+                  />XL
+                </div>
+              </div>
+              <div class="form-section-child" id="radio-btn-2">
+                <div class="fsic-container" id="empty-fsic"></div>
+                <div
+                  class="errorform-container"
+                  id="uniquesubmission-error-container"
+                >
+                  <p class="inputerror"></p>
+                </div>
+              </div>
+              <div class="form-section-child" id="tandc">
+                <div class="fsic-container" id="checkbox-fsic">
+                  <input
+                    type="checkbox"
+                    class="check-input"
+                    style="cursor: pointer"
+                    name="checkbox-input"
+                  /><span
+                    ><p class="check-text">
+                      By checking the Box, you agree to our terms and condition.
+                      Copyright © DVM, 2025, All rights reserved.
+                    </p></span
+                  >
+                </div>
+                <div class="errorform-container" id="checkbox-error-container">
+                  <p class="inputerror"></p>
+                </div>
+              </div>
+              <div class="btn-container-tablet">
+                <div class="form-section-child" id="btn-reset">
+                  <button class="reset-btn" type="reset">
+                    <span>RESET</span>
+                  </button>
+                </div>
+                <div class="form-section-child" id="btn-submit-tablet">
+                  <button class="submit-btn" type="submit">
+                    <span>SUBMIT</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="validate+storage+unique.js"></script>
+  </body>
+</html>
