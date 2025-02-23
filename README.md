@@ -26,7 +26,7 @@ Also for radio-buttons, dropdown menu and checkbox I didn't used the default htm
 7) In the end I called the storedata function and clearDatauponSubmission function using the eventListener "submit", hence when the form is succesfully submitted both of these functions are called.
 
 
-8) The form submission confirmation message function was not called within the same eventListener as the storeData and clearDatauponSubmission, I called it as soon as the form succesfully validates the form, I used the same defError function to display the confirmation message. 
+8) The form submission confirmation message function was not called within the same eventListener as the storeData and clearDatauponSubmission, I called it as soon as the Flag succesfully validates the form, I used the same defError function to display the confirmation message. 
 
 
 Thats it!(if there's any error in submission or the code isn't working as mentioned above please lmk!)
